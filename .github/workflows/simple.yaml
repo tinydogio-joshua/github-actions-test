@@ -3,7 +3,7 @@ name: Shell Commands
 on: [push]
 
 jobs:
-  run-shell-command:
+  run-shell-commands:
     runs-on: ubuntu-22.04
     steps:
       - name: Echo a String
@@ -17,3 +17,11 @@ jobs:
         run: |
           import platform
           print(platform.processor())
+  run-windows-commands:
+    runs-on: windows-2022
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        shell: bash
+        run: pwd
