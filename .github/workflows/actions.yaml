@@ -6,7 +6,7 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-22.04
     steps:
-      - name: List Files
+      - name: List Files & Vars
         run: |
           pwd
           ls -a
