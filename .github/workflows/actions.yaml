@@ -14,6 +14,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-22.04
     steps:
+      - name: Payload
+        run: echo "${{ github.event.client_payload.env }}"
       - name: List Files & Vars
         run: |
           pwd
