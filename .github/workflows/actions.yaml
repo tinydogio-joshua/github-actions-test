@@ -1,9 +1,19 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
-  # push:
+  # repository_dispatch:
+  #   types: [build]
+  push:
+    branches:
+      - main
+      - "issue/*"
+      - "!issue/IGNORED_DUE_TO_EXCLAMATION_POINT_AT_THE_START"
+    tags:
+      - "v1.*"
+    paths-ignore:
+      - "**.md"
+    # paths:
+    #   - "**.js"
   # schedule:
   #   - cron: "0/5 * * * *"
   #   - cron: "0/6 * * * *"
